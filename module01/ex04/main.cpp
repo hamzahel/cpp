@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 23:07:39 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/03 00:23:17 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/03 01:39:17 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int main(int argc, char **argv)
         std::cout << "you enter"<<std::endl;
         std::ifstream myfile;
         myfile.open(argv[1]);
-        while (myfile)
+        while (std::getline(myfile, text))
         {
-            myfile >> text;
             std::cout << text << std::endl;
         }
         myfile.close();
