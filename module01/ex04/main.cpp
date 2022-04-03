@@ -6,31 +6,40 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 23:07:39 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/03 01:39:17 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/03 22:59:33 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-
-
 int main(int argc, char **argv)
 {
     std::string text;
-    // std::cout << "the number of argc " << argc << std::endl;
+    std::ifstream myfile;
+    std::ofstream newfile;
+    std::size_t n;
+    
+    
     if (argc == 4)
     {
-        std::cout << "you enter"<<std::endl;
-        std::ifstream myfile;
         myfile.open(argv[1]);
+        newfile.open(std::string(argv[1]) + "new");
         while (std::getline(myfile, text))
         {
-            std::cout << text << std::endl;
+            n = text.find(argv[2]);
+            if (n != std::string::npos)
+            {
+                text.erase(n, std::string(argv[2]).length());
+                text.insert(n, argv[3]);
+                // std::cout << text << std::endl;
+            }
+            newfile << text << std::endl;
         }
         myfile.close();
+        newfile.close();
     }
-    else 
+    else
         std::cout << "you should enter <filename> str1 str2" << std::endl;
     return (0);
 }
