@@ -1,16 +1,15 @@
-#ifndef DOG_H
-#define DOG_H
+// #ifndef DOG_H
+// #define DOG_H
 
-#include <iostream>
+// #include <iostream>
+// #include "Animal.hpp"
 
-class Dog{
-    protected:
-        std::string type;
-    public:
-        Animal();
-        ~Animal();
-        void setType(std::string type);
-        std::string getType( void );
-}
-
-#endif
+// class Dog: public Animal{
+// 	public:
+// 		Dog();
+// 		~Dog();
+// 		Dog& operator= (const Dog& dog);
+// 		Dog(Dog& dog);
+// 		void makeSound();
+// };
+// #endif

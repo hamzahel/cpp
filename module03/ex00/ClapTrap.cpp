@@ -14,7 +14,7 @@ ClapTrap::ClapTrap(const ClapTrap& l)
     name = l.name;
     hitPoints = l.hitPoints;
     energyPoints = l.energyPoints;
-    attackDamage = l.attackDamage;    
+    attackDamage = l.attackDamage;
 }
 
 ClapTrap::~ClapTrap()
