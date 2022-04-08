@@ -4,16 +4,16 @@
 #include <iostream>
 
 class Animal{
-    private:
+    protected:
         std::string type;
     public:
         Animal();
+        Animal(const std::string type);
         ~Animal();
-        Animal(Animal const &animal);
+        Animal(const Animal &animal);
         const Animal& operator= (Animal const &animal);
-        void setType(const std::string type);
         std::string getType( void ) const;
-        void    makeSound();
+        virtual void    makeSound() const;
 };
 
 #endif

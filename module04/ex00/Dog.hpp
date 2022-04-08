@@ -1,15 +1,15 @@
-// #ifndef DOG_H
-// #define DOG_H
+#ifndef DOG_H
+#define DOG_H
 
-// #include <iostream>
-// #include "Animal.hpp"
+#include <iostream>
+#include "Animal.hpp"
 
-// class Dog: public Animal{
-// 	public:
-// 		Dog();
-// 		~Dog();
-// 		Dog& operator= (const Dog& dog);
-// 		Dog(Dog& dog);
-// 		void makeSound();
-// };
-// #endif
+class Dog: public Animal{
+	public:
+		Dog();
+		~Dog();
+		Dog& operator= (const Dog& dog);
+		Dog(const Dog& dog);
+        void makeSound() const;
+};
+#endif
