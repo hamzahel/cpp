@@ -1,30 +1,41 @@
-// #include "Dog.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/09 00:20:34 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/09 00:20:35 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Dog::Dog()
-// {
-//     std::cout << "dog constructer called!" << std::endl;
-//     setType("Dog");
-// }
+#include "Dog.hpp"
 
-// Dog::~Dog()
-// {
-//     std::cout << "dog destructor called!" << std::endl;
-// }
+Dog::Dog() : Animal("Dog")
+{
+    std::cout << "dog constructer called!" << std::endl;
+}
 
-// Dog::Dog(Dog& dog)
-// {
-//     std::cout << "dog copy constructor called!" << std::endl;
-//     type = dog.getType();
-// }
+Dog::~Dog()
+{
+    std::cout << "dog destructor called!" << std::endl;
+}
 
-//  Dog& Dog::operator= (const Dog& dog)
-// {
-//     std::cout << "dog operator assiment called!" << std::endl;
-//     type = dog.getType();
-//     return (*this);
-// }
+Dog::Dog(const Dog& dog)
+{
+    std::cout << "dog copy constructor called!" << std::endl;
+    type = dog.getType();
+}
 
-// void Dog::makeSound()
-// {
-//     std::cout << "woof woof woof" << std::endl;
-// }
+ Dog& Dog::operator= (const Dog& dog)
+{
+    std::cout << "dog operator assiment called!" << std::endl;
+    type = dog.getType();
+    return (*this);
+}
+
+void Dog::makeSound() const
+{
+    std::cout << "woof woof woof" << std::endl;
+}
