@@ -1,6 +1,7 @@
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 #include <iostream>
+#include <string.h>
 
 class Contact {
     private:

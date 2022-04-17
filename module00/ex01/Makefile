@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+         #
+#    By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 14:56:04 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/03/29 17:02:38 by hel-ayac         ###   ########.fr        #
+#    Updated: 2022/04/17 10:53:27 by ceo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-CC = g++
+CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -20,11 +20,11 @@ SRC_FILE = PhoneBook.cpp
 
 HEADER = PhoneBook.hpp
 
-OBJ_FILE = $(SRC_FILE:.c=.o)
+OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 all : $(NAME)
 
-%.o:%.c
+%.o:%.cpp
 	$(CC) $(CFLAGS)  -c $< -o $@
 
 $(NAME) : $(OBJ_FILE)
@@ -32,9 +32,8 @@ $(NAME) : $(OBJ_FILE)
 
 clean :
 	rm -rf $(OBJ_FILE) 
-	make clean -C $(LIBFT_MAKEFILE_PATH)
 
 fclean : clean
-	rm -rf $(NAME) $(LIBFT)
+	rm -rf $(NAME)
 
 re : fclean all
