@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 23:49:52 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/17 23:50:07 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/18 01:13:43 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,7 @@ std::string Print10(std::string str)
 void    getUsage()
 {
     std::cout << "\nplease enter" << std::endl;
-    std::cout << "[ADD SEARCH EXIT]\n\n"; 
+    std::cout << "[ADD SEARCH EXIT]\n\n";
 }
 
 bool is_digits(const std::string str)
