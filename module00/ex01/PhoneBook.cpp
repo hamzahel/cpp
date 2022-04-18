@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/17 23:49:52 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/17 23:50:07 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
-//class contact
 Contact::Contact()
 {
     this->FirstName = "";
@@ -95,15 +106,14 @@ void PhoneBook::Search(int i)
     Contact c = this->repo[i];
     if (!c.is_Empty())
     {
-        std::cout << "index |  first name  | last name | nick name" << std::endl;
-        std::cout << i;
-        std::cout << "     | ";
-        Print10(c.getFirstName());
-        std::cout << " | ";
-        Print10(c.getLastName());
-        std::cout << " | ";
-        Print10(c.getNickName());
-        std::cout<<std::endl;
+        std::cout << std::setw(11) << "index|";
+        std::cout << std::setw(11) << "fist name|";
+        std::cout << std::setw(11) << "last name|";
+        std::cout << std::setw(11) << "nick name|" << std::endl;
+        std::cout << std::setw(11) << std::to_string(i) + "|";
+        std::cout << std::setw(11) << Print10(c.getFirstName()) + "|";
+        std::cout << std::setw(11) << Print10(c.getLastName()) + "|";
+        std::cout << std::setw(11) << Print10(c.getNickName()) + "|" << std::endl;
     }
     else
         std::cout << "Search Result : 0" << std::endl;
@@ -113,36 +123,35 @@ void PhoneBook::Search(int i)
 std::string getInput(std::string title)
 {
     std::string tmp;
-    std::cout << "please enter your " << title << std::endl;
+    if (title != "")
+        std::cout << "please enter your " << title << std::endl;
     std::getline (std::cin, tmp);
     while(tmp.empty())
         {
-            std::cout << "your " << title << " is required " << std::endl;   
+            if (title != "")
+                std::cout << "your " << title << " is required " << std::endl;
+            else
+                getUsage();  
             std::getline (std::cin, tmp);
         }
     return (tmp);
 }
 
-void Print10(std::string std)
-{
-    int i;
-
-    i = 0;
-    std::cout << " ";
-    while (i < 9)
+std::string Print10(std::string str)
+{    
+    if (str.length() > 9)
     {
-        std::cout << (char)std[i];
-        i++;
+        str.erase(9 , str.length());
+        str.insert(9 , "." ,1);
+        return str;
     }
-    if (std[10] != 0)
-        std::cout << ".";
-    std::cout << " ";
+    return str;
 }
 
 void    getUsage()
 {
-    std::cout << "please enter" << std::endl;
-    std::cout << "ADD\nSEARCH\nEXIT\n"; 
+    std::cout << "\nplease enter" << std::endl;
+    std::cout << "[ADD SEARCH EXIT]\n\n"; 
 }
 
 bool is_digits(const std::string str)
@@ -160,7 +169,8 @@ int main(void)
 
     while (1)
     {
-        command = getInput("command");
+        getUsage();
+        command = getInput("");
         if (command.compare("ADD") == 0)
         {
             phonebook.Add();
@@ -178,9 +188,6 @@ int main(void)
             std::cout << "good bye" << std::endl;
             exit(0);
         }
-        else
-            getUsage();
-      
     }
     return (0);
 }
