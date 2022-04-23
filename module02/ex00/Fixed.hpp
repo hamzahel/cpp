@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:41:59 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/04 21:11:51 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/23 20:42:04 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,6 @@ class Fixed
         int getRawBits( void );
         void setRawBits (int const raw);
 };
+
+// float tmp = (float) _fixed;
+// tmp / (1 << bits);

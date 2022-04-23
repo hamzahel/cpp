@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:42:02 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/04 23:11:19 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/23 21:54:05 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main( void ) {
     Fixed const d( b );
     
     a = Fixed( 1234.4321f );
-
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;

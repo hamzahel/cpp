@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:41:56 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/04 23:24:29 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/23 22:18:41 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_point_i = 0;
+	this->_point = 0;
 }
 
 Fixed::Fixed(int point)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_point_i = point;
+	this->_point = point << _bits;
 }
 
 Fixed::Fixed(float point )
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_point_f = point;
+	std::cout << "the value of floating point" << std::roundf(point * (1 << _bits)) << std::endl;
+	this->_point = std::roundf(point * (1 << _bits));
 }
 
 Fixed::~Fixed()
@@ -38,45 +39,40 @@ Fixed::~Fixed()
 int Fixed::getRawBits()
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_point_i);
+	return (this->_point);
 }
 
 void Fixed::setRawBits(int raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_point_i = raw;
+	this->_point = raw;
 }
 
 Fixed::Fixed(Fixed const &old)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_point_i = old.toInt();
-	this->_point_f = old.toFloat();
+	this->_point = old._point;
 }
 
 Fixed& Fixed::operator= (Fixed const &old)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_point_i = old.toInt();
-	this->_point_f = old.toFloat();
+	this->_point = old._point;
 	return (*this);
 }
 
 std::ostream& operator<<(std::ostream& out,const Fixed& f)
 {
-	if (f.toFloat() != 0)
-		return out << f.toFloat();
-	return out << f.toInt();
+	return out << f.toFloat();
 }
 
 int Fixed::toInt() const
 {
-	if (this->_point_f > 0)
-		return (roundf(this->_point_f));
-	return (this->_point_i);
+	return (this->_point >> _bits);
 }
 
 float Fixed::toFloat() const
 {
-	return (this->_point_f);
+	float tmp = (float)_point;
+	return (tmp / (1 << this->_bits));
 }

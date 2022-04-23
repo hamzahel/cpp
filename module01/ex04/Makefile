@@ -6,23 +6,23 @@
 #    By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 22:55:58 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/04/03 23:04:30 by hel-ayac         ###   ########.fr        #
+#    Updated: 2022/04/23 01:55:07 by hel-ayac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
 
-CC = g++
+CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC_FILE = main.cpp
 
-OBJ_FILE = $(SRC_FILE:.c=.o)
+OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 all : $(NAME)
 
-%.o:%.c
+%.o:%.cpp
 	$(CC) $(CFLAGS)  -c $< -o $@
 
 $(NAME) : $(OBJ_FILE)
