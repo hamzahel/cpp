@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:41:59 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/08 01:26:33 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/23 20:53:46 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 class Fixed
 {
 	private:
-		int				_point_i;
-		float			_point_f;
+		int				_point;
 		static const	int _bits = 8;
 	public:
 		Fixed();

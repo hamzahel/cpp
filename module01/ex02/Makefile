@@ -1,27 +1,23 @@
+NAME = Brain
 
-NAME = Fixed
-
-CC = g++
+CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_FILE = Fixed.cpp main.cpp
+SRC_FILE = main.cpp
 
-HEADER = Fixed.hpp
-
-OBJ_FILE = $(SRC_FILE:.c=.o)
+OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 all : $(NAME)
 
-%.o:%.c
+%.o:%.cpp
 	$(CC) $(CFLAGS)  -c $< -o $@
 
 $(NAME) : $(OBJ_FILE)
 	$(CC) $(CFLAGS) $(OBJ_FILE) -o $(NAME)
 
 clean :
-	rm -rf $(OBJ_FILE)
-	make clean -C $(LIBFT_MAKEFILE_PATH)
+	rm -rf $(OBJ_FILE) 
 
 fclean : clean
 	rm -rf $(NAME) $(LIBFT)

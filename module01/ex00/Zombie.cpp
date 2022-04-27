@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 22:00:15 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/02 22:00:16 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/18 02:04:08 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ Zombie::Zombie(std::string name){
 }
 Zombie::~Zombie(void)
 {
-    // this->announce();
-    // delete(this);
 }
 
 void Zombie::setName(std::string name)

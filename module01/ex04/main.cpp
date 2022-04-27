@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 23:07:39 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/03 22:59:33 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/23 02:00:22 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int main(int argc, char **argv)
     if (argc == 4)
     {
         myfile.open(argv[1]);
-        newfile.open(std::string(argv[1]) + "new");
+        newfile.open(std::string(argv[1]) + ".replace");
         while (std::getline(myfile, text))
         {
             n = text.find(argv[2]);
-            if (n != std::string::npos)
+            while (n != std::string::npos)
             {
                 text.erase(n, std::string(argv[2]).length());
                 text.insert(n, argv[3]);
-                // std::cout << text << std::endl;
+                n = text.find(argv[2]);
             }
             newfile << text << std::endl;
         }

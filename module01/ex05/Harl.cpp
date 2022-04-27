@@ -1,4 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/23 02:43:25 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/23 02:51:32 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
+
+Harl::Harl()
+{}
+
+Harl::~Harl(){}
 
 void Harl::debug(void)
 {
@@ -33,10 +50,10 @@ void Harl::complain(std::string level)
     std::string arr[4];
     int i;
 
-    arr[0] = "debug";
-    arr[1] = "info";
-    arr[2] = "warning";
-    arr[3] = "error";
+    arr[0] = "DEBUG";
+    arr[1] = "INFO";
+    arr[2] = "WARNING";
+    arr[3] = "ERROR";
     ptr[0] = &Harl::debug;
     ptr[1] = &Harl::info;
     ptr[2] = &Harl::warning;

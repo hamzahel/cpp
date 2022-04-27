@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/17 23:50:00 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/17 23:50:01 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 #include <iostream>
-#include <string.h>
+#include <iomanip>
 
 class Contact {
     private:
@@ -38,5 +50,5 @@ class PhoneBook{
 };
 std::string getInput(std::string title);
 void    getUsage(void);
-void    Print10(std::string str);
+std::string    Print10(std::string str);
 #endif
