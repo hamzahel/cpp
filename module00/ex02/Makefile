@@ -6,13 +6,13 @@
 #    By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 16:57:42 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/03/30 12:44:10 by ceo              ###   ########.fr        #
+#    Updated: 2022/04/25 05:29:35 by ceo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Account
 
-CC = g++
+CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -20,11 +20,11 @@ SRC_FILE = tests.cpp Account.cpp
 
 HEADER = Account.hpp
 
-OBJ_FILE = $(SRC_FILE:.c=.o)
+OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 all : $(NAME)
 
-%.o:%.c
+%.o:%.cpp
 	$(CC) $(CFLAGS)  -c $< -o $@
 
 $(NAME) : $(OBJ_FILE)

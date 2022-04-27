@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_FILE = ClapTrap.cpp main.cpp
+SRC_FILE = ClapTrap.cpp main.cpp scavTrap.cpp
 
 HEADER = ClapTrap.hpp
 

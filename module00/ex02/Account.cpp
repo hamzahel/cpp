@@ -43,7 +43,6 @@ void Account::_displayTimestamp(void)
 {
 	std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
 	std::time_t time_now = std::chrono::system_clock::to_time_t(now);
-
 	tm currenttime = *localtime(&time_now);
 	std::cout << std::setfill('0') << "[" << (currenttime.tm_year + 1900)
 			<< std::setw(2) << currenttime.tm_mon
