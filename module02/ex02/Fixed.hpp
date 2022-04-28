@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 02:23:38 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/24 02:23:39 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -8,8 +20,8 @@
 class Fixed
 {
 	private:
-		int		_fixed;
-		static const int	bits = 8;
+		int		_point;
+		static const int	_bits = 8;
 	public:
 		Fixed();
 		Fixed(const int fixed);

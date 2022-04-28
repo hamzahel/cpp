@@ -6,12 +6,11 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:41:56 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/23 22:18:41 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/23 22:24:40 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -27,7 +26,6 @@ Fixed::Fixed(int point)
 Fixed::Fixed(float point )
 {
 	std::cout << "Float constructor called" << std::endl;
-	std::cout << "the value of floating point" << std::roundf(point * (1 << _bits)) << std::endl;
 	this->_point = std::roundf(point * (1 << _bits));
 }
 

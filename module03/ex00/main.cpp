@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/28 04:50:20 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/28 04:50:21 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 int main(int argc, char **argv)
@@ -9,7 +21,6 @@ int main(int argc, char **argv)
     const std::string name = argv[1];
     const std::string target = argv[2];
     ClapTrap clap(name);
-
     clap.takeDamage(5);
     std::cout << std::endl;
     clap.attack(target);
