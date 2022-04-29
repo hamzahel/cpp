@@ -6,7 +6,7 @@
 #    By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 03:13:07 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/04/28 03:13:08 by hel-ayac         ###   ########.fr        #
+#    Updated: 2022/04/29 02:00:04 by hel-ayac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ $(NAME) : $(OBJ_FILE)
 
 clean :
 	rm -rf $(OBJ_FILE)
-	make clean -C $(LIBFT_MAKEFILE_PATH)
 
 fclean : clean
 	rm -rf $(NAME) $(LIBFT)

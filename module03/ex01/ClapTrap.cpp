@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 03:50:04 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/28 04:50:08 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/29 02:18:42 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void ClapTrap::attack(const std::string& target)
     if(this->energyPoints > 0)
     {
         ClapTrap t(target);
-        t.hitPoints -= this->attackDamage;
+        t.takeDamage(this->attackDamage);
         this->energyPoints--;
         std::cout << "ClapTrap: " << this->name << " attacks " << target
         << " , causing: " << this->attackDamage << " points of damage!" << std::endl;
@@ -61,8 +61,12 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap: "<< this->name <<" takedamage is called with amount of: "<< amount << std::endl;
-    this->attackDamage += amount;
+    std::cout << "ClapTrap: "<< this->name <<" is taking a damage of : "<< amount << std::endl;
+    this->hitPoints -= amount;
+    if (this->hitPoints <= 0)
+    {
+        std::cout << "ClapTrap: "<< this->name <<" is died!"<< amount << std::endl;
+    }
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

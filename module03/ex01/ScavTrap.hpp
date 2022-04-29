@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:50:11 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/28 04:50:12 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/29 01:58:23 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap(const ScavTrap& copy);
 		ScavTrap& operator = (const ScavTrap& copy);
 		~ScavTrap();
-		void	attack(std::string const& target);
+		void	attack(const std::string& target);
 		void	guardGate();
 };
 

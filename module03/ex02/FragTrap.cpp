@@ -1,46 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/29 02:00:42 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/04/29 02:22:08 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap()
 {
-	std::cout << "FragTrap default Constructor has been called" << std::endl;
+	std::cout << "FragTrap: "<<this->name<<" default Constructor has been called" << std::endl;
 }
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << "FragTrap Constructor has been called!!" << std::endl;
-	Hitpoints = 100;
-	Energy_points = 100;
-	Attack_damage = 30;
+	std::cout << "FragTrap:"<<this->name<<" Constructor has been called!!" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 }
 
 FragTrap::FragTrap(const FragTrap& copy)
 {
-	std::cout << "FragTrap Copy Constrctor has been Called!!" << std::endl;
+	std::cout << "FragTrap: " <<<this->name<" Copy Constrctor has been Called!!" << std::endl;
 	*this = copy;
 }
 
 FragTrap&	FragTrap::operator= (const FragTrap& copy)
 {
-	std::cout << "FragTrap Assignation operator called!" << std::endl;
-	if (this != &copy)
-	{
-		this->Name = copy.Name;
-		this->Hitpoints = copy.Hitpoints;
-		this->Energy_points = copy.Energy_points;
-		this->Attack_damage = copy.Attack_damage;
-	}
+	std::cout << "FragTrap: "<< this->name <<" Assignation operator called!" << std::endl;
+	this->Name = copy.Name;
+	this->hitPoints = copy.Hitpoints;
+	this->energyPoints = copy.Energy_points;
+	this->attackDamage = copy.Attack_damage;
 	return (*this);
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Destructor has been called!!" << std::endl;
+	std::cout << "FragTrap: "<<this->name<<" Destructor has been called!!" << std::endl;
 }
 
 void	FragTrap::attack(std::string const& target)
 {
-	std::cout << "FragTrap " << Name << " attack " << target << ", causing " << Attack_damage << " points of damage!" << std::endl;
+	if(this->energyPoints > 0)
+    {
+        FragTrap t(target);
+        t.takeDamage(this->attackDamage);
+        this->energyPoints--;
+        std::cout << "FragTrap: " << this->name << " attacks " << target
+        << " , causing: " << this->attackDamage << " points of damage!" << std::endl;
+        std::cout << "FragTrap: " << this->name << " has " << this->energyPoints << " of energy point" <<std::endl;
+    }
+    else
+        std::cout << "FragTrap: " << this->name << " You need hit points to attack" << std::endl;
 }
 
 void	FragTrap::highFivesGuys()
