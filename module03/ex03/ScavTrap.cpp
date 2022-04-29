@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:01:37 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:20:41 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/29 04:22:17 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout << "ScavTrap: " << this->name <<"default Constructor called" << std::endl;
+	std::cout << "ScavTrap: default Constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name),
@@ -30,15 +30,15 @@ ScavTrap::ScavTrap(const ScavTrap& copy)
 {
 	std::cout << "ScavTrap: "<< this->name <<" Copy Constrctor Called!!" << std::endl;
 	this->name = copy->name;
-	this->attackDamage = copy->attackDamage;
-	this->energyPoints = copy->energyPoints;
-	this->hitPoints = copy->hitPoints;
+	this->attackDamage = copy.attackDamage;
+	this->energyPoints = copy.energyPoints;
+	this->hitPoints = copy.hitPoints;
 }
 
 ScavTrap&	ScavTrap::operator= (const ScavTrap& copy)
 {
 	std::cout << "ScavTrap: "<< this->name<<" Assignment operator called!" << std::endl;
-	this->name = copy.Name;
+	this->name = copy.name;
 	this->hitPoints = copy.hitPoints;
 	this->energyPoints = copy.energyPoints;
 	this->attackDamage = copy.attackDamage;

@@ -6,7 +6,7 @@
 #    By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/29 02:01:32 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/04/29 02:01:33 by hel-ayac         ###   ########.fr        #
+#    Updated: 2022/04/29 04:20:04 by hel-ayac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_FILE = ClapTrap.cpp main.cpp scavTrap.cpp
+SRC_FILE = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamonTrap.cpp
 
-HEADER = ClapTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamonTrap.hhp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 

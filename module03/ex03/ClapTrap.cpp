@@ -6,10 +6,11 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:01:03 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:18:40 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/29 04:18:39 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(const std::string& name):
     name(name),

@@ -6,29 +6,14 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:01:29 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:01:30 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/29 04:18:56 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamonTrap.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 3)
-    {
-        return (1);
-    }
-    const std::string name = argv[1];
-    const std::string target = argv[2];
-    ClapTrap clap(name);
-
-    clap.takeDamage(5);
-    std::cout << std::endl;
-    clap.attack(target);
-    std::cout << std::endl;
-    clap.takeDamage(5);
-    std::cout << std::endl;
-    clap.beRepaired(3);
-    std::cout << std::endl;
+    DiamondTrap t("hamza");
     return (0);
 }

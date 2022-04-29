@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:49:52 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:19:49 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/04/29 04:21:57 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ScavTrap::ScavTrap(const ScavTrap& copy)
 ScavTrap&	ScavTrap::operator= (const ScavTrap& copy)
 {
 	std::cout << "ScavTrap: "<< this->name<<" Assignment operator called!" << std::endl;
-	this->name = copy.Name;
+	this->name = copy.name;
 	this->hitPoints = copy.hitPoints;
 	this->energyPoints = copy.energyPoints;
 	this->attackDamage = copy.attackDamage;
