@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:01:29 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 04:18:56 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:33:25 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamonTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main()
+int main( void )
 {
-    DiamondTrap t("hamza");
-    return (0);
+	DiamondTrap	diamond("hamza");
+
+	diamond.whoAmI();
+	diamond.attack("kamal");
+	return 0;
 }

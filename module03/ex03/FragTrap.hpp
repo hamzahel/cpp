@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 02:01:24 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:01:25 by hel-ayac         ###   ########.fr       */
+/*   Created: 2022/04/29 02:00:45 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/02 14:20:23 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	public:
 		FragTrap();
 		FragTrap(const std::string& name);
-		FragTrap(const FragTrap& copy);
-		FragTrap& operator = (const FragTrap& copy);
+		FragTrap(FragTrap& copy);
+		FragTrap& operator = ( FragTrap& copy);
 		~FragTrap();
 		void	attack(std::string const& target);
 		void	highFivesGuys(void);

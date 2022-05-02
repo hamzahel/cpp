@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:00:48 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:00:49 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/02 06:47:17 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(int argc, char **argv)
 {
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     }
     const std::string name = argv[1];
     const std::string target = argv[2];
-    ClapTrap clap(name);
+    FragTrap clap(name);
 
     clap.takeDamage(5);
     std::cout << std::endl;
@@ -30,5 +30,6 @@ int main(int argc, char **argv)
     std::cout << std::endl;
     clap.beRepaired(3);
     std::cout << std::endl;
+    clap.highFivesGuys();
     return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+         #
+#    By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/29 01:58:35 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/04/29 02:00:17 by hel-ayac         ###   ########.fr        #
+#    Updated: 2022/04/30 23:29:07 by ceo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_FILE = ClapTrap.cpp main.cpp scavTrap.cpp
+SRC_FILE = ClapTrap.cpp main.cpp ScavTrap.cpp
 
 HEADER = ClapTrap.hpp scavTrap.hpp
 

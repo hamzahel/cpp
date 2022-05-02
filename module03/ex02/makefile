@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+         #
+#    By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/29 02:00:29 by hel-ayac          #+#    #+#              #
-#    Updated: 2022/04/29 02:00:30 by hel-ayac         ###   ########.fr        #
+#    Updated: 2022/05/02 06:29:19 by ceo              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_FILE = ClapTrap.cpp main.cpp scavTrap.cpp
+SRC_FILE = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 
-HEADER = ClapTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
@@ -32,7 +32,6 @@ $(NAME) : $(OBJ_FILE)
 
 clean :
 	rm -rf $(OBJ_FILE)
-	make clean -C $(LIBFT_MAKEFILE_PATH)
 
 fclean : clean
 	rm -rf $(NAME) $(LIBFT)

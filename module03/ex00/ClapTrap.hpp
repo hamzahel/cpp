@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:50:24 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/28 04:50:25 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/02 03:36:00 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap
         int         energyPoints;
         int         attackDamage;
     public:
+        ClapTrap();
         ClapTrap(const std::string& name);
         ClapTrap(const ClapTrap& l);
         ~ClapTrap();

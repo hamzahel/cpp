@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   scavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:50:11 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 01:58:23 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/02 02:13:25 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);
-		ScavTrap(const ScavTrap& copy);
-		ScavTrap& operator = (const ScavTrap& copy);
+		ScavTrap(ScavTrap& copy);
+		ScavTrap& operator = (ScavTrap& copy);
 		~ScavTrap();
 		void	attack(const std::string& target);
 		void	guardGate();

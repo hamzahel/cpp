@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 02:00:37 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:00:38 by hel-ayac         ###   ########.fr       */
+/*   Created: 2022/04/28 04:49:59 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/02 03:41:48 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,23 @@ class ClapTrap
         int         energyPoints;
         int         attackDamage;
     public:
-    ClapTrap(const std::string& name);
-    ClapTrap(const ClapTrap& l);
-    ~ClapTrap();
-    void operator = (const ClapTrap &l);
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+        ClapTrap();
+        ClapTrap(const std::string& name);
+        ClapTrap(const ClapTrap& l);
+        ~ClapTrap();
+        
+        // getters and setters
+        void setName(std::string value);
+        void setHitPoint(int value);
+        void setEnergyPoint(int value);
+        void setAttackDamage(int value);
+        std::string getName(void);
+        int         getHitPoint(void);
+        int         getAttackDamage(void);
+        int         getEnergyPoint(void);
+        void operator = (ClapTrap &l);
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 };
 #endif

@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 03:50:04 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:18:44 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/02 03:36:56 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+    std::cout << "ClapTrap:: default constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(const std::string& name):
     name(name),

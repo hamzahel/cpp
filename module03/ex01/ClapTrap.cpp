@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 03:50:04 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/29 02:18:42 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/02 03:41:30 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+    std::cout << "ClapTrap:: default constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(const std::string& name):
     name(name),
@@ -35,7 +40,7 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap: " << this->name <<" destructor called " << std::endl;
 }
 
-void ClapTrap::operator = (const ClapTrap &l)
+void ClapTrap::operator = (ClapTrap &l)
 {
     std::cout <<"Claptrap: " << this->name << " Assignment operator called" << std::endl;
     name = l.name;
@@ -81,3 +86,44 @@ void ClapTrap::beRepaired(unsigned int amount)
     else   
         std::cout << "ClapTrap: " << this->name << "You need energy points to be repaired" << std::endl;
 }
+
+void ClapTrap::setName(std::string value)
+{
+    this->name = value;
+}
+
+std::string ClapTrap::getName(void)
+{
+    return this->name;
+}
+
+void ClapTrap::setEnergyPoint(int value)
+{
+    this->energyPoints = value;
+}
+
+int ClapTrap::getEnergyPoint(void)
+{
+    return this->energyPoints;
+}
+
+void ClapTrap::setAttackDamage(int value)
+{
+    this->attackDamage = value;
+}
+
+int ClapTrap::getAttackDamage(void)
+{
+    return this->attackDamage;
+}
+
+void ClapTrap::setHitPoint(int value)
+{
+    this->hitPoints = value;
+}
+
+int ClapTrap::getHitPoint(void)
+{
+    return this->hitPoints;
+}
+
