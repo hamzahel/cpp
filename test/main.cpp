@@ -58,10 +58,39 @@ class D : public B , public C {
     }
 };
 
+class parent
+{
+    public:
+        parent()
+        {
+            std::cout << "parent onstructor is called!" << std::endl;
+        }
+
+        virtual ~parent()
+        {
+            std::cout << "parent destructor is called!" << std::endl;
+        }
+};
+
+class child : public parent 
+{
+    public:
+        child() : parent()
+        {
+            std::cout << "child contructor is called!" << std::endl;
+        }
+        virtual ~child()
+        {
+            std::cout << "child destructor is called!" << std::endl;
+        }
+};
+
+
 int main()
 {
     std::cout << "create the first test" << std::endl;
-    D d("kamal");
-    d.say();
+    child *c  = new child();
+    parent *a = c;
+    delete a;
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 02:01:11 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/02 14:20:49 by ceo              ###   ########.fr       */
+/*   Updated: 2022/05/03 04:45:25 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 	FragTrap(name), ScavTrap(name), name(name)
 {
 	std::cout << "DiamondTrap: "<< this->getName() <<" Constructor called" << std::endl;
+	setAttackDamage(FragTrap::getAttackDamage());
+	setHitPoint(FragTrap::getHitPoint());
+	setEnergyPoint(ScavTrap::getEnergyPoint());
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap& copy)
