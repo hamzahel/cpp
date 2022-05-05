@@ -6,7 +6,7 @@
 /*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:37 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/04 05:49:44 by ceo              ###   ########.fr       */
+/*   Updated: 2022/05/05 12:44:41 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ class Cat: public Animal{
 		Cat& operator= (const Cat& cat);
 		Cat(const Cat& cat);
         void makeSound() const;
+		void setBrain(Brain brain);
+		
 };
 #endif

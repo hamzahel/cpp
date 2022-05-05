@@ -6,7 +6,7 @@
 /*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:40 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/04 09:25:07 by ceo              ###   ########.fr       */
+/*   Updated: 2022/05/05 12:32:54 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat() : Animal("Cat")
 {
     std::cout << "cat constructer called!" << std::endl;
+    this->brain = new Brain();
 }
 
 Cat::~Cat()
@@ -38,6 +39,22 @@ Cat& Cat::operator= (const Cat& cat)
     type = cat.type;
     this->brain = copy->brain;
     return (*this);
+}
+
+void	Cat::set_ideas(std::string idea, int i)
+{
+	if (i > 99)
+		std::cout << "Wrong index!!" << std::endl;
+	else
+		brain->set_ideas(idea, i);
+}
+
+void	Cat::print_ideas(int i)
+{
+	if (i > 99)
+		std::cout << "Wrong index!!" << std::endl;
+	else
+		std::cout << brain->get_ideas(i) << std::endl;
 }
 
 void Cat::makeSound() const

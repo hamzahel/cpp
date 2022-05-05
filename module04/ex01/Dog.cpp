@@ -6,7 +6,7 @@
 /*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:34 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/04 06:18:32 by ceo              ###   ########.fr       */
+/*   Updated: 2022/05/05 12:32:21 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog() : Animal("Dog")
 {
     std::cout << "dog constructer called!" << std::endl;
+    this->brain = new Brain();
 }
 
 Dog::~Dog()
