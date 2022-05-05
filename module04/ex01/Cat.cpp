@@ -6,11 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:40 by hel-ayac          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 12:32:54 by ceo              ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 15:07:32 by hel-ayac         ###   ########.fr       */
->>>>>>> dd631c85d9cbd5a8b930fce3f9a466276830078c
+/*   Updated: 2022/05/05 15:46:11 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +41,14 @@ Cat& Cat::operator= (const Cat& cat)
     return (*this);
 }
 
-void	Cat::set_ideas(std::string idea, int i)
+void	Cat::setBrain(const Brain* b)
 {
-	if (i > 99)
-		std::cout << "Wrong index!!" << std::endl;
-	else
-		brain->set_ideas(idea, i);
+	this->brain = b;
 }
 
-void	Cat::print_ideas(int i)
+Brain* 	Cat::getBrain(void) const
 {
-	if (i > 99)
-		std::cout << "Wrong index!!" << std::endl;
-	else
-		std::cout << brain->get_ideas(i) << std::endl;
+    return this->brain;
 }
 
 void Cat::makeSound() const

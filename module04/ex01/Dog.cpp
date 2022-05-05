@@ -6,11 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:34 by hel-ayac          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 12:32:21 by ceo              ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 15:07:33 by hel-ayac         ###   ########.fr       */
->>>>>>> dd631c85d9cbd5a8b930fce3f9a466276830078c
+/*   Updated: 2022/05/05 15:46:28 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +37,16 @@ Dog::Dog(const Dog& dog)
     delete this->brain;
     this->brain = dog->brain;
     return (*this);
+}
+
+void	Cat::setBrain(const Brain* b)
+{
+	this->brain = b;
+}
+
+Brain* 	Cat::getBrain(void) const
+{
+    return this->brain;
 }
 
 void Dog::makeSound() const
