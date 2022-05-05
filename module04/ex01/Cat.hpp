@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:37 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 15:36:26 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/05 17:32:47 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat: public Animal{
 	private:
@@ -22,10 +23,10 @@ class Cat: public Animal{
 	public:
 		Cat();
 		virtual ~Cat();
-		Cat& operator= (const Cat& cat);
+		const Cat& operator= (const Cat& cat);
 		Cat(const Cat& cat);
         void makeSound() const;
-		void setBrain(const Brain& brain);
+		void setBrain(Brain* brain);
 		Brain& getBrain(void) const ;
 		
 };

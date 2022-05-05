@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:34 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 15:46:28 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/05 17:32:39 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ Dog::Dog(const Dog& dog)
 {
     std::cout << "dog copy constructor called!" << std::endl;
     type = dog.getType();
+    delete this->brain;
+    this->brain = dog.brain;
 }
 
  Dog& Dog::operator= (const Dog& dog)
@@ -35,11 +37,11 @@ Dog::Dog(const Dog& dog)
     std::cout << "dog operator assigment called!" << std::endl;
     type = dog.getType();
     delete this->brain;
-    this->brain = dog->brain;
+    this->brain = dog.brain;
     return (*this);
 }
 
-void	Cat::setBrain(const Brain* b)
+void	Cat::setBrain(Brain* b)
 {
 	this->brain = b;
 }

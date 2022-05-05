@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:40 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 15:46:11 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/05 17:32:54 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ Cat::Cat(const Cat& cat)
     std::cout << "Copy constructor called!" << std::endl;
     type = cat.getType();
     delete this->brain;
-    this->brain = cat->brain;
+    this->brain = cat.brain;
 }
 
-Cat& Cat::operator= (const Cat& cat)
+const Cat& Cat::operator= (const Cat& cat)
 {
     std::cout << "cat operator assigment called!" << std::endl;
     delete this->brain;
     type = cat.getType();
-    this->brain = copy->brain;
+    this->brain = cat.brain;
     return (*this);
 }
 
-void	Cat::setBrain(const Brain* b)
+void	Cat::setBrain(Brain* b)
 {
 	this->brain = b;
 }

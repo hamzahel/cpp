@@ -5,10 +5,9 @@ CC = clang++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC_FILE = Animal.cpp main.cpp Cat.cpp Dog.cpp\
-			WrongAnimal.cpp WrongCat.cpp
+			Brain.cpp
 
-HEADER = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp\
-			WrongCat.hpp
+HEADER = Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
