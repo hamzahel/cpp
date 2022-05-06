@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:40 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 17:32:54 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 11:11:58 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,14 @@ Cat::~Cat()
 Cat::Cat(const Cat& cat)
 {
     std::cout << "Copy constructor called!" << std::endl;
+    // this->brain = nullptr;
     type = cat.getType();
-    delete this->brain;
     this->brain = cat.brain;
 }
 
 const Cat& Cat::operator= (const Cat& cat)
 {
     std::cout << "cat operator assigment called!" << std::endl;
-    delete this->brain;
     type = cat.getType();
     this->brain = cat.brain;
     return (*this);

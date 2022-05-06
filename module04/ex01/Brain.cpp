@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:24:58 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 15:24:59 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 09:23:01 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Brain::Brain()
 	std::uniform_int_distribution<int> distribution(0,2);
 	int rand =  distribution(generator);
 
-	std::cout << "Brain constructor is called!!" << std::endl;
+	std::cout << "Brain constructor called!!" << std::endl;
 	while (i < 100)
 	{
 		rand =  distribution(generator);
@@ -31,7 +31,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain& copy)
 {
-	std::cout << "Brain copy constructor is called!!" << std::endl;
+	std::cout << "Brain copy constructor called!!" << std::endl;
 	*this = copy;
 }
 
@@ -39,7 +39,7 @@ Brain& Brain::operator= (const Brain& copy)
 {
 	int		i = 0;
 	
-	std::cout << "Brain Assignment operator is called!!" << std::endl;
+	std::cout << "Brain Assignment operator called!!" << std::endl;
 	if (this != &copy)
 	{
 		while (i < 100)
@@ -51,18 +51,18 @@ Brain& Brain::operator= (const Brain& copy)
 	return (*this);
 }
 
-void	Brain::set_ideas(std::string idea, int i)
+void	Brain::setIdea(std::string idea, int i)
 {
 	if (i < 100)
 		ideas[i] = idea;
 }
 
-const std::string&	Brain::get_ideas(int i) const
+const std::string&	Brain::getIdea(int i) const
 {
 	return (ideas[i]);
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain destructor is called!!" << std::endl;
+	std::cout << "Brain destructor called!!" << std::endl;
 }

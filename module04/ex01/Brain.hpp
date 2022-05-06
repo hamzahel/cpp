@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:25:07 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 15:25:09 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 09:22:51 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Brain
 		Brain();
 		Brain(const Brain& copy);
 		Brain& operator = (const Brain& copy);
-		void	set_ideas(std::string idea, int i);
-		const std::string&	get_ideas(int i) const;
+		void	setIdea(std::string idea, int i);
+		const std::string&	getIdea(int i) const;
 		~Brain();
 };
 

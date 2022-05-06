@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:34 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 17:32:39 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 08:52:05 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ Dog::Dog(const Dog& dog)
     return (*this);
 }
 
-void	Cat::setBrain(Brain* b)
+void	Dog::setBrain(Brain* b)
 {
 	this->brain = b;
 }
 
-Brain* 	Cat::getBrain(void) const
+Brain* 	Dog::getBrain(void) const
 {
     return this->brain;
 }

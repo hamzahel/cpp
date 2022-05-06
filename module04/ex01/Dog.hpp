@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:31 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 17:32:42 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 09:16:44 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog: public Animal{
+class Dog: public Animal
+{
 	private:
 		Brain	*brain;
 	public:
@@ -27,6 +28,6 @@ class Dog: public Animal{
 		Dog(const Dog& dog);
         void makeSound() const;
 		void setBrain(Brain* brain);
-		Brain& getBrain(void) const ;
+		virtual Brain* getBrain(void) const ;
 };
 #endif

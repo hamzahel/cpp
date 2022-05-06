@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceo <ceo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:43 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/05 17:26:22 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 09:33:28 by ceo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ANIMAL_H
 
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal{
     protected:
@@ -26,6 +27,7 @@ class Animal{
         const Animal& operator= (Animal const &animal);
         std::string getType( void ) const;
         virtual void    makeSound() const;
+        virtual Brain* getBrain(void) const = 0;
 };
 
 #endif
