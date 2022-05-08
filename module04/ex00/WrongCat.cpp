@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:23 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/04/09 00:47:56 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 16:33:31 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ WrongCat& WrongCat::operator= (const WrongCat& cat)
 
 void WrongCat::makeSound() const
 {
-    std::cout << "meaw meaw meaw" << std::endl;
+    std::cout << "wrong meaw meaw meaw" << std::endl;
 }

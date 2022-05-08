@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 
 class A{
     private:
@@ -86,11 +87,77 @@ class child : public parent
 };
 
 
+class TestGrade
+{
+    public:
+        const std::string name;
+        int               grade;
+        class GradeToHighException : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
+        class GradeToLowException : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
+
+        
+        TestGrade() : name("kamal") , grade(5)
+        {
+            if (this->grade > 100)
+                throw GradeToLowException();
+            else if (this->grade <= 0)
+                throw GradeToHighException();
+        }
+
+        TestGrade(std::string name , int grade) : name(name) , grade(grade)
+        {
+            if (this->grade > 100)
+                throw GradeToLowException();
+            else if (this->grade <= 0)
+                throw GradeToHighException();
+        }
+
+        void incrementGrade()
+        {
+            if (grade <= 0)
+                throw GradeToHighException();
+            else
+                grade--;
+        }
+        void decrementGrade()
+        {
+            if (grade > 100)
+                throw GradeToLowException();
+            else
+                grade++;
+        }
+};
+
+const char* TestGrade::GradeToLowException::what() const throw ()
+{
+    return "grade is low!";
+}
+const char* TestGrade::GradeToHighException::what() const throw()
+{
+    return "grade is high!";
+}
+
 int main()
 {
-    std::cout << "create the first test" << std::endl;
-    child *c  = new child();
-    parent *a = c;
-    delete a;
+    try {
+        TestGrade g;
+        g.incrementGrade();
+        g.incrementGrade();
+        g.incrementGrade();
+        g.incrementGrade();
+        g.incrementGrade();
+        g.incrementGrade();
+    }catch(const std::exception& e)
+    {
+        std::cout << "you have an exception" << e.what() << std::endl;
+    }
     return (0);
 }

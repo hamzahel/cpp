@@ -4,9 +4,11 @@ CC = clang++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC_FILE = Bureaucrat.cpp main.cpp Form.cpp
+SRC_FILE = Bureaucrat.cpp main.cpp Form.cpp PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
-HEADER = Bureaucrat.hpp Form.hpp
+HEADER = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
+			RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 

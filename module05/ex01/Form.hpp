@@ -28,11 +28,6 @@ class Form
 			public:
 				const char* what() const throw();
 		};
-		class FormUnsignedException : public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
 		Form();
 		Form(const std::string& name, const int gradeSign, const int gradeExecute);
 		Form(const Form& copy);
@@ -42,7 +37,6 @@ class Form
 		int			getGradeExecute() const;
 		bool		getSigned() const;
 		void		beSigned(const Bureaucrat& brt);
-		void		execute(Bureaucrat const& executor) const;
 		virtual ~Form();
 };
 

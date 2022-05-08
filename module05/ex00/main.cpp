@@ -1,54 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/08 17:06:41 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/08 22:05:53 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
-int main()
+int main(int ac , char **av)
 {
+	if (ac != 3)
+		return (1);
 	try
 	{
-		std::cout << "----- Director -----\n";
-		Bureaucrat	bureaucrat("Director", 1);
+		std::cout << std::endl << "intial bureaucrat" << std::endl;
+		Bureaucrat	bureaucrat(av[1], std::stoi(av[2]));
+		std::cout << bureaucrat;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return (1);
+	}
+	// decrement 
+	try
+	{
+		std::cout << std::endl << "decrement bureaucrat" << std::endl;
+		Bureaucrat	bureaucrat(av[1], std::stoi(av[2]));
+		std::cout << bureaucrat;
+		bureaucrat.decrement();
+		std::cout << bureaucrat;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return (1);
+	}
+	// increment 
+	try
+	{
+		std::cout << std::endl << "increment bureaucrat" << std::endl;
+		Bureaucrat	bureaucrat(av[1], std::stoi(av[2]));
 		std::cout << bureaucrat;
 		bureaucrat.increment();
 		std::cout << bureaucrat;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		std::cout << "----- Director1 -----\n";
-		Bureaucrat	bureaucrat1("Director1", 150);
-		std::cout << bureaucrat1;
-		bureaucrat1.decrement();
-		std::cout << bureaucrat1;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		std::cout << "----- Director2 -----\n";
-		Bureaucrat	bureaucrat2("Director2", 15);
-		std::cout << bureaucrat2;
-		bureaucrat2.increment();
-		std::cout << bureaucrat2;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		std::cout << "----- Director3 -----\n";
-		Bureaucrat	bureaucrat3("Director3", 15);
-		std::cout << bureaucrat3;
-		bureaucrat3.decrement();
-		std::cout << bureaucrat3;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
+		return (1);
 	}
 	return (0);
 }

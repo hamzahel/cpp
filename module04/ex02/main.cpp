@@ -6,7 +6,7 @@
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 00:20:28 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/06 16:22:16 by hel-ayac         ###   ########.fr       */
+/*   Updated: 2022/05/06 17:12:22 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 int main()
 {
+	// test ex02
+	// Animal *a;
+	
 	// test cat class and deep copy 
 	Cat cat;
 	std::cout << "idea : " << cat.getBrain()->getIdea(3) << std::endl;

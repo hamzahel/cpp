@@ -1,58 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 00:20:34 by hel-ayac          #+#    #+#             */
-/*   Updated: 2022/05/06 16:16:28 by hel-ayac         ###   ########.fr       */
+/*   Created: 2022/04/09 00:20:40 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/06 16:13:44 by hel-ayac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog() : Animal("Dog")
+Cat::Cat() : Animal("Cat")
 {
-    std::cout << "dog constructer called!" << std::endl;
+    std::cout << "cat constructer called!" << std::endl;
     this->brain = new Brain();
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
+    std::cout << "cat destructor called!" << std::endl;
     delete this->brain;
-    std::cout << "dog destructor called!" << std::endl;
 }
 
-Dog::Dog(const Dog& dog)
+Cat::Cat(const Cat& cat)
 {
-    std::cout << "dog copy constructor called!" << std::endl;
+    std::cout << "Copy constructor called!" << std::endl;
     this->brain = nullptr;
-    type = dog.getType();
-    *this = dog;
+    type = cat.getType();
+    *this = cat;
 }
 
- Dog& Dog::operator= (const Dog& dog)
+const Cat& Cat::operator= (const Cat& cat)
 {
-    std::cout << "dog operator assigment called!" << std::endl;
+    std::cout << "cat operator assigment called!" << std::endl;
     delete this->brain;
     this->brain = new Brain();
-    type = dog.getType();
-    *(this->brain) = *(dog.brain);
+    type = cat.getType();
+    *(this->brain) = *(cat.brain);
     return (*this);
 }
 
-void	Dog::setBrain(Brain* b)
+void	Cat::setBrain(Brain* b)
 {
 	this->brain = b;
 }
 
-Brain* 	Dog::getBrain(void) const
+Brain* 	Cat::getBrain(void) const
 {
     return this->brain;
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-    std::cout << "woof woof woof" << std::endl;
+    std::cout << "meaw meaw meaw" << std::endl;
 }

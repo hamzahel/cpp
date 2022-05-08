@@ -28,7 +28,7 @@ Form&	Form::operator= (const Form& copy)
 {
 	if (this != &copy)
 		_signed = copy.getSigned();
-	return (*this); 
+	return (*this);
 }
 
 const char*		Form::GradeTooHighException::what() const throw()
