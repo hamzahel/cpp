@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 15:04:02 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/09 16:14:54 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ShrubberyCreationForm.hpp"
 
@@ -6,7 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreation", 145, 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
-	Form("ShrubberyCreation", 145, 137) , _target(target)
+	Form("ShrubberyCreation", 145, 137) , target(target)
 {
 }
 
@@ -20,14 +32,14 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	if (this != &copy)
 	{
-		this->_target = copy._target;
+		this->target = copy.target;
 	}
 	return (*this);
 }
 
 std::string	ShrubberyCreationForm::getTarget() const
 {
-	return (_target);
+	return (target);
 }
 
 void		ShrubberyCreationForm::Action() const
@@ -39,37 +51,20 @@ void		ShrubberyCreationForm::Action() const
 	outfile.open(file);
 	if (outfile.is_open())
 	{
-		outfile << "              _{\\ _{\\{\\/}/}/}__\n";
-		outfile << "             {/{/\\}{/{/\\}(\\}{/\\} _\n";
-		outfile << "            {/{/\\}{/{/\\}(_)\\}{/{/\\}  _\n";
-		outfile << "         {\\{/(\\}\\}{/{/\\}\\}{/){/\\}\\} /\\}\n";
-		outfile << "        {/{/(_)/}{\\{/)\\}{\\(_){/}/}/}/}\n";
-		outfile << "       _{\\{/{/{\\{/{/(_)/}/}/}{\\(/}/}/}\n";
-		outfile << "      {/{/{\\{\\{\\(/}{\\{\\/}/}{\\}(_){\\/}\\}\n";
-		outfile << "      _{\\{/{\\{/(_)\\}/}{/{/{/\\}\\})\\}{/\\}\n";
-		outfile << "     {/{/{\\{\\(/}{/{\\{\\{\\/})/}{\\(_)/}/}\\}\n";
-		outfile << "      {\\{\\/}(_){\\{\\{\\/}/}(_){\\/}{\\/}/})/}\n";
-		outfile << "       {/{\\{\\/}{/{\\{\\{\\/}/}{\\{\\/}/}\\}(_)\n";
-		outfile << "      {/{\\{\\/}{/){\\{\\{\\/}/}{\\{\\(/}/}\\}/}\n";
-		outfile << "       {/{\\{\\/}(_){\\{\\{\\(/}/}{\\(_)/}/}\\}\n";
-		outfile << "         {/({/{\\{/{\\{\\/}(_){\\/}/}\\}/}(\\}\n";
-		outfile << "          (_){/{\\/}{\\{\\/}/}{\\{\\)/}/}(_)\n";
-		outfile << "            {/{/{\\{\\/}{/{\\{\\{\\(_)/}\n";
-		outfile << "             {/{\\{\\{\\/}/}{\\{\\}/}\n";
-		outfile << "              {){/ {\\/}{\\/} \\}\\}\n";
-		outfile << "              (_)  \\.-'.-/\n";
-		outfile << "          __...--- |'-.-'| --...__\n";
-		outfile << "   _...--\"   .-'   |'-.-'|  ' -.  \"\"--..__\n";
-		outfile << " -\"    ' .  . '    |.'-._| '  . .  '   \n";
-		outfile << " .  '-  '    .--'  | '-.'|    .  '  . '\n";
-		outfile << "          ' ..     |'-_.-|\n";
-		outfile << "  .  '  .       _.-|-._ -|-._  .  '  .\n";
-		outfile << "              .'   |'- .-|   '.\n";
-		outfile << "  ..-'   ' .  '.   `-._.-`   .'  '  - .\n";
-		outfile << "   .-' '        '-._______.-'     '  .\n";
-		outfile << "        .      ~,\n";
-		outfile << "    .       .        .    ' '-.\n";
-		outfile.close();
+		outfile << "              00000          \n";
+		outfile << "           00000000000     \n";
+		outfile << "         000000000000000           \n";
+		outfile << "       0000000000000000000            \n";
+		outfile << "      000000000000000000000            \n";
+		outfile << "       0000000000000000000         \n";
+		outfile << "         000000000000000          \n";
+		outfile << "            _/_/_\\_\\_           \n";
+		outfile << "              _|||_           \n";
+		outfile << "               |||          \n";
+		outfile << "               |||          \n";
+		outfile << "               |||          \n";
+		outfile << "               |||           \n";
+		
 		std::cout << "File created successfully!!\n";
 	}
 	else

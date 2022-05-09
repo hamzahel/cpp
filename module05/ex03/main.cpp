@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 18:50:27 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/09 18:52:07 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -8,38 +20,28 @@ int		main()
 {
 	try
 	{
-		ShrubberyCreationForm	shrubbery("Home");
-		std::cout << "--------- shrubbery -----------\n" << std::endl;
-		shrubbery.Action();
-
-		std::cout << "\n--------- Roboto -----------\n" << std::endl;
-		RobotomyRequestForm		robot("Roboto-san");
-		robot.Action();
-
-		std::cout << "\n--------- president -----------\n" << std::endl;
-		PresidentialPardonForm		president("Younes");
-		president.Action();
-
-
-		std::cout << "\n--------- execute -----------\n" << std::endl;
-		Bureaucrat	bureaucrat("Director", 6);
-		bureaucrat.signForm(president);
-		bureaucrat.executeForm(president);
-
-
-		std::cout << "\n--------- Intern -----------\n" << std::endl;
 		Intern someRandomIntern;
 		Form* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf = someRandomIntern.makeForm("robotomy request", "kamal");
 		rrf->Action();
 		delete rrf;
-		
-		std::cout << "\n--------- Other Intern -----------\n" << std::endl;
-		Intern someOtherRandomIntern;
-		Form* noform;
-		noform = someOtherRandomIntern.makeForm("unexisted", "notarget");
-		noform->Action();
-		delete noform;
+
+		rrf = someRandomIntern.makeForm("shrubbery creation", "hamza");
+		rrf->Action();
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("robasdlkja", "samira");
+		rrf->Action();
+		delete rrf;
 	}
 	catch(const std::exception& e)
 	{

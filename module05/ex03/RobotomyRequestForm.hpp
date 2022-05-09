@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 15:04:00 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/09 15:04:15 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
@@ -9,7 +21,7 @@
 class RobotomyRequestForm : public Form
 {
 	private:
-		std::string		_target;
+		std::string		target;
 	public:
 		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
