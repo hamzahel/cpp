@@ -42,6 +42,7 @@ class Form
 		int			getGradeExecute() const;
 		bool		getSigned() const;
 		void		beSigned(const Bureaucrat& brt);
+		virtual void	Action() const = 0;
 		void		execute(Bureaucrat const& executor) const;
 		virtual ~Form();
 };
