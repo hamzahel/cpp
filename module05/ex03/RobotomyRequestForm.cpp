@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 15:03:57 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/09 15:04:43 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "RobotomyRequestForm.hpp"
 
@@ -6,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomizing", 72, 45)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : 
-	Form("Robotomizing", 72, 45) , _target(target)
+	Form("Robotomizing", 72, 45) , target(target)
 {
 }
 
@@ -20,14 +32,14 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& c
 {
 	if (this != &copy)
 	{
-		this->_target = copy._target;
+		this->target = copy.target;
 	}
 	return (*this);
 }
 
 std::string	RobotomyRequestForm::getTarget() const
 {
-	return (_target);
+	return (target);
 }
 
 void		RobotomyRequestForm::Action() const
@@ -38,9 +50,9 @@ void		RobotomyRequestForm::Action() const
 	random = rand() % 2;
 	std::cout << "* DRILLING NOISES *\n" << std::endl;
 	if (random)
-		std::cout << _target << " has been robotomized successfully\n";
+		std::cout << target << " has been robotomized successfully\n";
 	else
-		std::cout << _target << " failed to get robotomized!!\n";
+		std::cout << target << " failed to get robotomized!!\n";
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

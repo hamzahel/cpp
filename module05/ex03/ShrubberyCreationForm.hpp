@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 18:50:47 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/09 18:50:48 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef SHRUBBERYCRATIONFORM_HPP
 # define SHRUBBERYCRATIONFORM_HPP
@@ -8,7 +20,7 @@
 class ShrubberyCreationForm : public Form
 {
 	private:
-		std::string		_target;
+		std::string		target;
 	public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
