@@ -4,10 +4,14 @@
 
 int main()
 {
-    double s = 5.2868898578575;
+    std::string value = "67";
+    double s = std::stod(value);
 
-    int number  = static_cast<int>(s);
+    std::cout << "the value if double after cast it to string "
+     << s << std::endl;
 
-    std::cout << "is digit : " << number << std::endl;
+    // int number  = static_cast<int>(s);
+
+    // std::cout << "is digit : " << number << std::endl;
     return (0);   
 }

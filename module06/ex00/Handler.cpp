@@ -18,7 +18,7 @@ int		isScientific(const std::string& str)
 	return (0);
 }
 
-bool	handler(const std::string& str, int i)
+int	handler(const std::string& str, int i)
 {
 	int		point;
 	char	last;
@@ -26,14 +26,16 @@ bool	handler(const std::string& str, int i)
 	point = 0;
 	last = str[(str.length() - 1)];
 	if (!isdigit(last) && last != 'f')
-		return (false);
+		return (0);
 	while (i < static_cast<int>(str.length() - 1))
 	{
 		if (str[i] == '.' && !point)
 			point++;
 		else if (!isdigit(str[i]))
-			return (false);
+			return (0);
 		i++;
 	}
-	return (true);
+	if (point == 1)
+		return (2);
+	return (1);
 }

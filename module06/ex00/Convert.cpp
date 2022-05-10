@@ -3,12 +3,14 @@
 void	doubleConverter(const std::string& str)
 {
 	double	d;
-	double	frac;
 	int		i;
+	int		is_handler;
 
 	i = 0;
+	
 	if (str[0] == '+' || str[0] == '-')
 		i++;
+	is_handler = handler(str, i);
 	if (!isdigit(str[i]))
 	{
 		if (isScientific(str) == 1)
@@ -19,13 +21,12 @@ void	doubleConverter(const std::string& str)
 			std::cout << "double: Invalid argument!!" << std::endl;
 		return ;
 	}
-	if (!handler(str, i))
+	if (!is_handler)
 		std::cerr << "int: Invalid argument!!" << std::endl;
 	else
 	{	
 		d = static_cast<double>(stod(str));
-		frac = d - stoi(str);
-		std::cout << "double: " << d << (!(frac) ? ".0\n" : "\n");
+		std::cout << "double: " << d << ((is_handler == 1) ? ".0\n" : "\n");
 	}
 }
 
@@ -33,11 +34,12 @@ void	floatConverter(const std::string& str)
 {
 	float	f;
 	int		i;
-	float	frac;
+	int		is_handler;
 
 	i = 0;
 	if (str[0] == '+' || str[0] == '-')
 		i++;
+	is_handler = handler(str, i);
 	if (!isdigit(str[i]))
 	{
 		if (isScientific(str))
@@ -46,19 +48,20 @@ void	floatConverter(const std::string& str)
 			std::cout << "float: Invalid argument!!" << std::endl;
 		return ;
 	}
-	if (!handler(str, i))
+	if (!is_handler)
 		std::cerr << "int: Invalid argument!!" << std::endl;
 	else
 	{	
 		f = static_cast<float>(stof(str));
-		frac = f - stoi(str);
-		std::cout << "float: " << f << (!(frac) ? ".0f\n" : "f\n");
+		std::cout << "float: "  << std::fixed;
+		std::cout << std::setprecision(1) << f << ((is_handler == 1) ? ".0f\n" : "f\n");
 	}
 }
 
 void	intConverter(const std::string& str)
 {
 	int		i;
+	int number;
 
 	i = 0;
 	if (str[0] == '+' || str[0] == '-')
@@ -74,7 +77,10 @@ void	intConverter(const std::string& str)
 	if (!handler(str, i))
 		std::cerr << "int: Invalid argument!!" << std::endl;
 	else
-		std::cout << "int: " << static_cast<int>(stoi(str)) << std::endl;
+	{
+		number = stoi(str);
+		std::cout << "int: " << number << std::endl;
+	}
 }
 
 void	charConverter(const std::string& str)
@@ -91,7 +97,7 @@ void	charConverter(const std::string& str)
 		else if (isScientific(str))
 			std::cout << "char: impossible" << std::endl;
 		else
-			std::cerr << "char: Invalid argument!!" << std::endl;
+			std::cerr << "int: Invalid argument!!" << std::endl;
 		return ;
 	}
 	if (!handler(str, i))
