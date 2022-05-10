@@ -1,5 +1,3 @@
-
-
 #include "Convert.hpp"
 
 void	doubleConverter(const std::string& str)
@@ -9,9 +7,9 @@ void	doubleConverter(const std::string& str)
 	int		i;
 
 	i = 0;
-	if (str.c_str()[0] == '+' || str.c_str()[0] == '-')
+	if (str[0] == '+' || str[0] == '-')
 		i++;
-	if (!isdigit(str.c_str()[i]))
+	if (!isdigit(str[i]))
 	{
 		if (isScientific(str) == 1)
 			std::cout << "double: " << str << std::endl;
@@ -21,7 +19,7 @@ void	doubleConverter(const std::string& str)
 			std::cout << "double: Invalid argument!!" << std::endl;
 		return ;
 	}
-	if (!checker(str, i))
+	if (!handler(str, i))
 		std::cerr << "int: Invalid argument!!" << std::endl;
 	else
 	{	
@@ -38,17 +36,17 @@ void	floatConverter(const std::string& str)
 	float	frac;
 
 	i = 0;
-	if (str.c_str()[0] == '+' || str.c_str()[0] == '-')
+	if (str[0] == '+' || str[0] == '-')
 		i++;
-	if (!isdigit(str.c_str()[i]))
+	if (!isdigit(str[i]))
 	{
 		if (isScientific(str))
-			std::cout << "float: " << str << ((is_scientific(str) == 2) ? "\n" : "f\n");
+			std::cout << "float: " << str << ((isScientific(str) == 2) ? "\n" : "f\n");
 		else
 			std::cout << "float: Invalid argument!!" << std::endl;
 		return ;
 	}
-	if (!checker(str, i))
+	if (!handler(str, i))
 		std::cerr << "int: Invalid argument!!" << std::endl;
 	else
 	{	
@@ -63,9 +61,9 @@ void	intConverter(const std::string& str)
 	int		i;
 
 	i = 0;
-	if (str.c_str()[0] == '+' || str.c_str()[0] == '-')
+	if (str[0] == '+' || str[0] == '-')
 		i++;
-	if (!isdigit(str.c_str()[i]))
+	if (!isdigit(str[i]))
 	{
 		if (isScientific(str))
 			std::cout << "int: impossible" << std::endl;
@@ -73,7 +71,7 @@ void	intConverter(const std::string& str)
 			std::cerr << "int: Invalid argument!!" << std::endl;
 		return ;
 	}
-	if (!checker(str, i))
+	if (!handler(str, i))
 		std::cerr << "int: Invalid argument!!" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(stoi(str)) << std::endl;
@@ -84,19 +82,19 @@ void	charConverter(const std::string& str)
 	int		i;
 
 	i = 0;
-	if (str.c_str()[0] == '+' || str.c_str()[0] == '-')
+	if (str[0] == '+' || str[0] == '-')
 		i++;
-	if (!isdigit(str.c_str()[i]))
+	if (!isdigit(str[i]))
 	{
 		if (str.length() == 1)
-			std::cout << "char: '" << str.c_str()[0] << "'" << std::endl;
+			std::cout << "char: '" << str[0] << "'" << std::endl;
 		else if (isScientific(str))
 			std::cout << "char: impossible" << std::endl;
 		else
-			std::cerr << "int: Invalid argument!!" << std::endl;
+			std::cerr << "char: Invalid argument!!" << std::endl;
 		return ;
 	}
-	if (!checker(str, i))
+	if (!handler(str, i))
 		std::cerr << "char: Invalid argument!!" << std::endl;
 	else
 	{

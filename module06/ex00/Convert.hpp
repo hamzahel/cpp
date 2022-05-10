@@ -13,7 +13,7 @@ void	doubleConverter(const std::string& str);
 //Checkers
 
 int		isScientific(const std::string& str);
-bool	checker(const std::string& str, int i);
+bool	handler(const std::string& str, int i);
 
 
 #endif

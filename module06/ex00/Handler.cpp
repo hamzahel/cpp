@@ -1,5 +1,5 @@
 
-#include "converter.hpp"
+#include "Convert.hpp"
 
 int		isScientific(const std::string& str)
 {
@@ -18,20 +18,20 @@ int		isScientific(const std::string& str)
 	return (0);
 }
 
-bool	checker(const std::string& str, int i)
+bool	handler(const std::string& str, int i)
 {
 	int		point;
 	char	last;
 
 	point = 0;
-	last = str.c_str()[(str.length() - 1)];
+	last = str[(str.length() - 1)];
 	if (!isdigit(last) && last != 'f')
 		return (false);
 	while (i < static_cast<int>(str.length() - 1))
 	{
-		if (str.c_str()[i] == '.' && !point)
+		if (str[i] == '.' && !point)
 			point++;
-		else if (!isdigit(str.c_str()[i]))
+		else if (!isdigit(str[i]))
 			return (false);
 		i++;
 	}
