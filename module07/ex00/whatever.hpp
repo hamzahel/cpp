@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 02:19:22 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/11 04:21:32 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef WHATEVER_HPP
 # define WHATEVER_HPP
@@ -16,63 +28,15 @@ void	swap(T& x , T& y)
 }
 
 template <typename T>
-T	min(T min, T max)
+T	min(T v1, T v2)
 {
-	return (min < max) ? min : max;
+	return (v1 < v2) ? v1 : v2;
 }
 
 template <typename T>
-T	max(T min, T max)
+T	max(T v1, T v2)
 {
-	return (min > max) ? min : max;
-}
-
-class Awesome
-{
-	private:
-		int _n;
-	public:
-		Awesome(void) : _n(0) {}
-		Awesome(int n) : _n(n) {}
-		Awesome &operator=(Awesome &a)
-		{
-			_n = a._n;
-			return *this;
-		}
-		bool	operator==(Awesome const& rhs) const
-		{
-			return (this->_n == rhs._n);	
-		}
-		bool	operator!=(Awesome const& rhs) const
-		{
-			return (this->_n != rhs._n);	
-		}
-		bool	operator>(Awesome const& rhs) const
-		{
-			return (this->_n > rhs._n);	
-		}
-		bool	operator<(Awesome const& rhs) const
-		{
-			return (this->_n < rhs._n);	
-		}
-		bool	operator>=(Awesome const& rhs) const
-		{
-			return (this->_n >= rhs._n);	
-		}
-		bool	operator<=(Awesome const& rhs) const
-		{
-			return (this->_n <= rhs._n);	
-		}
-		int	get_n() const
-		{
-			return (_n);
-		}
-};
-
-std::ostream& operator<<(std::ostream& o, const Awesome& a)
-{
-	o << a.get_n();
-	return o;
+	return (v1 > v2) ? v1 : v2;
 }
 
 #endif

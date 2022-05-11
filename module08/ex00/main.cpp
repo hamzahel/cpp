@@ -1,24 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 19:30:53 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/11 19:30:55 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "easyfind.hpp"
 
-int		main()
-{
-	std::vector<int>	vect;
-	int					length;
-	int					i;
 
-	i = -1;
-	length = 5;
-	while (++i < length)
-		vect.push_back(i);
-	try
-	{
-		easyfind(vect, 0);
-		easyfind(vect, 4);
-		easyfind(vect, 1);
-		easyfind(vect, 5);
-		easyfind(vect, 2);
-	}
-	catch(const std::exception& e){std::cerr << e.what() << '\n';}
-	return (0);
+int main(int ac, char **av)
+{
+    if (ac != 2)
+    {
+        std::cout << "you need to enter 3 params" << std::endl;
+        return (1);
+    }
+    int arr[] = {4,2,6,2,1,9};
+    std::vector<int> vec(arr, arr + 6);
+    try
+    {
+        easyfind(vec, std::stoi(av[1]));
+    }catch(const std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    return (0);
 }

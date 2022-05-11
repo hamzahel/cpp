@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 19:30:56 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/11 19:32:20 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
@@ -8,23 +20,21 @@
 #include <vector>
 #include <algorithm>
 
-class notFound : public std::exception
+class ValueNotFoundException : public std::exception
 {
-	public:
-		const char* what() const throw(){return (" value not found on this container!!");}
+    public:
+        const char* what() const  throw()
+        {
+            return ("not Found Error! ");
+        }
 };
 
 template <typename T>
-void	easyfind(T temp, int find)
+void easyfind (T& container, int num)
 {
-	std::vector<int>::iterator		it;
-
-	it = std::find(temp.begin(), temp.end(), find);
-	std::cout << find;
-	if (it != temp.end())
-		std::cout << " value found on this container!!\n";
-	else
-		throw notFound();
+    std::find(container.begin(), container.end() , num ) == container.end() ? 
+        throw ValueNotFoundException()
+       : std::cout << "found value : " << num;
 }
 
 #endif

@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/10 23:39:12 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/10 23:39:13 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
 #include <string>
-#include <stdint.h>
+#include <cstdint>
 
 struct	Data
 {
@@ -40,5 +52,6 @@ int		main()
 
 	data = deserialize(ptr);
 	std::cout << data << " | " << data->i << " | " << data->str << std::endl;
+	delete data;
 	return (0);
 }

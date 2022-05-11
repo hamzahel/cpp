@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 04:16:02 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/11 04:16:03 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef ITER_HPP
 # define ITER_HPP
@@ -21,19 +33,19 @@ void	iter(T *arr, int length, void (*func)(const T& element))
 		func(arr[i]);
 }
 
-class Awesome
+class Test
 {
 	private:
-		int	_n;
+		std::string	name;
 	public:
-		Awesome(void) : _n(42) {}
-		int		get(void) const {return this->_n;}
+		Test(void) : name("kamal") {}
+		std::string		getName(void) const {return this->name;}
 };
 
-std::ostream& operator<<(std::ostream& o, Awesome const& rhs)
+std::ostream& operator<<(std::ostream& out, Test const& test)
 {
-	o << rhs.get();
-	return o;
+	out << test.getName();
+	return out;
 }
 
 

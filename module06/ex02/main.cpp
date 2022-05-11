@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/10 23:39:04 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/11 00:36:54 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Class.hpp"
 
@@ -42,6 +54,8 @@ void	identify(Base* p)
 		std::cout << "None of the derived Classes\n";
 }
 
+int number = static_cast<int>(78788.78f);
+
 void	identify(Base& p)
 {
 	try
@@ -81,5 +95,6 @@ int		main()
 	std::cout << "Identify real type using reference!!\n";
 	identify(*base);
 	
+	delete base;
 	return (0);
 }

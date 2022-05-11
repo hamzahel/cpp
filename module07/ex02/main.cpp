@@ -1,63 +1,67 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-ayac <hel-ayac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 03:49:54 by hel-ayac          #+#    #+#             */
+/*   Updated: 2022/05/11 04:13:15 by hel-ayac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include <iostream>
 #include "Array.hpp"
 
-int		main()
+#define MAX_VAL 750
+int main(int, char**)
 {
-	Array<char>		tab_char(6);
-	Array<std::string>	str(6);
-	Array<int>		tab_int(6);
-	unsigned int	i;
-	int		random;
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+	}
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-	i = -1;
-	std::cout << "----------string--------\n";
-	std::cout << "str size: " << str.size() << std::endl;
-	while (++i < str.size())
-	{
-		str[i] = i + 40;
-		std::cout << "str[" << i << "] = " << str[i] << std::endl;
-	}
-	std::cout << "---------int-------\n";
-	i = -1;
-	std::cout << "tab_int size: " << tab_int.size() << std::endl;
-	while (++i < tab_int.size())
-	{
-		tab_int[i] = i + 10;
-		std::cout << "tab_int[" << i << "] = " << tab_int[i] << std::endl;
-	}
-	std::cout << "--------char----------\n";
-	i = -1;
-	std::cout << "tab_char size: " << tab_char.size() << std::endl;
-	while (++i < tab_char.size())
-	{
-		tab_char[i] = i + 33;
-		std::cout << "tab_char[" << i << "] = " << tab_char[i] << std::endl;
-	}
-	std::cout << "---------deep copying---------\n";
-	{
-		i = -1;
-		Array<char>		tab_cp;
-		
-		tab_cp = tab_char;
-		std::cout << "tab_cp size: " << tab_cp.size() << std::endl;
-		while (++i < tab_cp.size())
-			std::cout << "tab_cp[" << i << "] = " << tab_cp[i] << std::endl;
-	}
-	std::cout << "--------char---------\n";
-	i = -1;
-	while (++i < tab_char.size())
-		std::cout << "tab_char[" << i << "] = " << tab_char[i] << std::endl;
-	std::cout << "--------exception--------\n";
-	try
-	{
-		srand (time(NULL));
-		random = rand() % (tab_char.size() + 5);
-		tab_char[random];
-		std::cout << random << " is a Valid index!\ntab_char[" << random << "] = " << tab_char[random] << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << random << " is an " << e.what() << '\n';
-	}
-	return (0);
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand() % 100;
+		std::cout << "value is : " << numbers[i] << std::endl << std::endl;
+    }
+    
+    delete [] mirror;
+    return 0;
 }
